@@ -1,6 +1,5 @@
 package com.lany.blog.controller;
 
-import com.lany.blog.entity.Result;
 import com.lany.blog.entity.User;
 import com.lany.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

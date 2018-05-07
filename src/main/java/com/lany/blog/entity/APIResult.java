@@ -9,12 +9,12 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Result {
+public class APIResult {
     private int code;
     private String msg;
     private Object data;
 
-    public Result(int code, String msg) {
+    public APIResult(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }

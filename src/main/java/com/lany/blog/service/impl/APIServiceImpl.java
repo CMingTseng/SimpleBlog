@@ -1,6 +1,6 @@
 package com.lany.blog.service.impl;
 
-import com.lany.blog.entity.Result;
+import com.lany.blog.entity.APIResult;
 import com.lany.blog.entity.User;
 import com.lany.blog.service.APIService;
 import com.lany.blog.service.UserService;
@@ -18,22 +18,22 @@ public class APIServiceImpl implements APIService {
     UserService mUserService;
 
     @Override
-    public Result findByUsername(String name) {
+    public APIResult findByUsername(String name) {
         List<User> users = mUserService.findByUsername(name);
-        Result result = new Result(1, "请求成功");
+        APIResult APIResult = new APIResult(1, "请求成功");
         if (!ListUtils.isEmpty(users)) {
-            result.setData(users);
+            APIResult.setData(users);
         }
-        return result;
+        return APIResult;
     }
 
     @Override
-    public Result findByNickname(String name) {
+    public APIResult findByNickname(String name) {
         List<User> users = mUserService.findByNickname(name);
-        Result result = new Result(1, "请求成功");
+        APIResult APIResult = new APIResult(1, "请求成功");
         if (!ListUtils.isEmpty(users)) {
-            result.setData(users);
+            APIResult.setData(users);
         }
-        return result;
+        return APIResult;
     }
 }

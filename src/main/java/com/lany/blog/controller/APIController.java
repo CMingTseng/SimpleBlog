@@ -1,13 +1,9 @@
 package com.lany.blog.controller;
 
-import com.lany.blog.entity.Result;
-import com.lany.blog.entity.User;
+import com.lany.blog.entity.APIResult;
 import com.lany.blog.service.APIService;
-import com.lany.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api")
@@ -25,17 +21,17 @@ public class APIController {
 //    }
 
     @RequestMapping("/hello")
-    public Result hello() {
-        return new Result(0, "请求成功", "this is hello");
+    public APIResult hello() {
+        return new APIResult(0, "请求成功", "this is hello");
     }
 
     @RequestMapping("/info")
-    public Result findByUsername(@RequestParam String name) {
+    public APIResult findByUsername(@RequestParam String name) {
         return mAPIService.findByUsername(name);
     }
 
     @RequestMapping("/info2")
-    public Result findByNickname(@RequestParam String name) {
+    public APIResult findByNickname(@RequestParam String name) {
         return mAPIService.findByNickname(name);
     }
 }
