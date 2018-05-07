@@ -1,9 +1,15 @@
 package com.lany.blog.controller;
 
+import com.lany.blog.exception.TokenOverTimeException;
+import com.lany.blog.exception.ValidationException;
 import com.lany.blog.result.ResponseResult;
 import com.lany.blog.service.APIService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.ConstraintViolationException;
+import java.util.Collections;
 
 @RestController
 @RequestMapping(value = "/api")
@@ -21,8 +27,8 @@ public class APIController {
 //    }
 
     @RequestMapping("/hello")
-    public ResponseResult hello() {
-        return new ResponseResult(0, "请求成功", "this is hello");
+    public void hello() {
+        throw new ValidationException();
     }
 
     @RequestMapping("/info")
