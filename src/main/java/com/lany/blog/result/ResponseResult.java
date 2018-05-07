@@ -1,4 +1,4 @@
-package com.lany.blog.entity;
+package com.lany.blog.result;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,12 +9,12 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class APIResult {
+public class ResponseResult {
     private int code;
     private String msg;
     private Object data;
 
-    public APIResult(int code, String msg) {
+    public ResponseResult(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }

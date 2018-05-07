@@ -1,11 +1,11 @@
 package com.lany.blog.service;
 
 
-import com.lany.blog.entity.APIResult;
+import com.lany.blog.result.ResponseResult;
 
 public interface APIService {
 
-    APIResult findByUsername(String name);
+    ResponseResult findByUsername(String name);
 
-    APIResult findByNickname(String name);
+    ResponseResult findByNickname(String name);
 }
