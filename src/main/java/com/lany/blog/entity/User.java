@@ -1,5 +1,6 @@
 package com.lany.blog.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,4 +24,13 @@ public class User implements Serializable {
     private String sex;
     @Column(name = "phone")
     private String phone;
+    @Column(name = "email")
+    private String email;
+
+    /**
+     * 密码，不能进行json显示
+     */
+    @JsonIgnore
+    @Column(name = "password")
+    private String password;
 }
