@@ -12,12 +12,15 @@ import java.io.Serializable;
 @Table(name = "tb_user")
 public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
-
+    @Column(name = "user_name")
     private String username;
+    @Column(name = "nick_name")
     private String nickname;
+    @Column(name = "sex")
     private String sex;
+    @Column(name = "phone")
     private String phone;
 }
