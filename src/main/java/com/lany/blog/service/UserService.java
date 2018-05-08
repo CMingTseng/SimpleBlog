@@ -5,7 +5,7 @@ import com.lany.blog.entity.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserService extends BaseService<User, Long> {
 
     List<User> findByUsername(String name);
 

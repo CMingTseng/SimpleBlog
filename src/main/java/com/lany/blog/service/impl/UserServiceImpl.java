@@ -10,20 +10,26 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
-
     @Autowired
-    private UserRepository userRepository;
+    private UserRepository mRepository;
+
+    @Override
+    public User findById(Long id) {
+        Optional<User> optional = mRepository.findById(id);
+        return optional.get();
+    }
 
     @Override
     public List<User> findByUsername(String name) {
         User user = new User();
         user.setUsername(name);
         Example<User> example = Example.of(user);
-        return userRepository.findAll(example);
+        return mRepository.findAll(example);
     }
 
     @Override
@@ -39,7 +45,7 @@ public class UserServiceImpl implements UserService {
         //创建实例
         Example<User> example = Example.of(user, matcher);
         //查询
-        List<User> users = userRepository.findAll(example);
-        return users;
+        return mRepository.findAll(example);
     }
+
 }

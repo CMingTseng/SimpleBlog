@@ -15,6 +15,11 @@ public class UserController {
     @Autowired
     UserService mUserService;
 
+    @RequestMapping("/detail")
+    public User detail(@RequestParam long id) {
+        return mUserService.findById(id);
+    }
+
     @RequestMapping("/info")
     public List<User> findByUsername(@RequestParam String name) {
         return mUserService.findByUsername(name);
