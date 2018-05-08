@@ -1,8 +1,6 @@
 package com.lany.blog.entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +9,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "tb_article")
 public class Article implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "article_id")

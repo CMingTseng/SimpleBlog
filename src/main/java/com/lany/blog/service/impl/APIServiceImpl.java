@@ -19,7 +19,7 @@ public class APIServiceImpl implements APIService {
 
     @Override
     public ResponseResult findByUsername(String name) {
-        List<User> users = mUserService.findByUsername(name);
+        List<User> users = mUserService.findByUserName(name);
         ResponseResult ResponseResult = new ResponseResult(1, "请求成功");
         if (!ListUtils.isEmpty(users)) {
             ResponseResult.setData(users);
@@ -29,11 +29,11 @@ public class APIServiceImpl implements APIService {
 
     @Override
     public ResponseResult findByNickname(String name) {
-        List<User> users = mUserService.findByNickname(name);
+        //List<User> users = mUserService.findByNickname(name);
         ResponseResult ResponseResult = new ResponseResult(1, "请求成功");
-        if (!ListUtils.isEmpty(users)) {
-            ResponseResult.setData(users);
-        }
+//        if (!ListUtils.isEmpty(users)) {
+//            ResponseResult.setData(users);
+//        }
         return ResponseResult;
     }
 }

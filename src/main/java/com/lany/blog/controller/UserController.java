@@ -20,13 +20,8 @@ public class UserController {
         return mUserService.findById(id);
     }
 
-    @RequestMapping("/info")
-    public List<User> findByUsername(@RequestParam String name) {
-        return mUserService.findByUsername(name);
-    }
-
-    @RequestMapping("/info2")
-    public List<User> findByNickname(@RequestParam String name) {
-        return mUserService.findByNickname(name);
+    @RequestMapping("/search")
+    public List<User> search(@RequestParam String keyword) {
+        return mUserService.search(keyword);
     }
 }

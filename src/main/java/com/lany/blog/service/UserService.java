@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserService extends BaseService<User, Long> {
 
-    List<User> findByUsername(String name);
+    List<User> findByUserName(String userName);
 
-    List<User> findByNickname(String name);
+    List<User> search(String keyword);
 }
